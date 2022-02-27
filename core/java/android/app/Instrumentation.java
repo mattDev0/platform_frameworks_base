@@ -1284,18 +1284,13 @@ public class Instrumentation {
 
     private static void maybeSpoofBuild(Application app) {
         String packageName = app.getPackageName();
-
-        // Set device model for Genshin Impact internal testings
-        String hardwareName = SystemProperties.get("ro.boot.hardware");
-        if (hardwareName == "gourami" &&
-            "com.miHoYo.GenshinImpact".equals(packageName) ||
-            "com.miHoYo.Yuanshen".equals(packageName)) {
-            setBuildField(packageName, "MODEL", "Pixel 5 Pro");
-        }
-
-        // Set MODEL to "Pixel 4a (5G)"
-        if ("com.google.android.gms".equals(packageName)) {
-            setBuildField(packageName, "MODEL", "Pixel 4a (5G)");
+        
+        // Set MODEL to "Pixel XL" to enable unlimited google photos backup
+        if ("com.google.android.apps.photos".equals(packageName)) {
+            setBuildField(packageName, "FINGERPRINT", "google/marlin/marlin:10/QP1A.191005.007.A3/5972272:user/release-keys");
+            setBuildField(packageName, "DEVICE", "marlin");
+            setBuildField(packageName, "PRODUCT", "marlin");
+            setBuildField(packageName, "MODEL", "Pixel XL");
         }
     }
 
