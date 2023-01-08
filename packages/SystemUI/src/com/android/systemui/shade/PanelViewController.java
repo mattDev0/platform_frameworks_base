@@ -446,6 +446,7 @@ public abstract class PanelViewController {
             } else {
                 expand = flingExpands(vel, vectorVel, x, y);
             }
+
             mDozeLog.traceFling(expand, mTouchAboveFalsingThreshold,
                     mCentralSurfaces.isFalsingThresholdNeeded(),
                     mCentralSurfaces.isWakeUpComingFromTouch());
