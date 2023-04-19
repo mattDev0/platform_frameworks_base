@@ -1296,6 +1296,15 @@ public class Instrumentation {
     private static void maybeSpoofBuild(Application app) {
         String packageName = app.getPackageName();
 
+        // Set DEVICE to "crosshatch" to fix Google Camera
+        if ("com.google.android.GoogleCamera".equals(packageName) ||
+            "com.google.android.GoogleCameraEng".equals(packageName) ||
+            "org.codeaurora.snapcam".equals(packageName)) {
+            setBuildField(packageName, "PRODUCT", "crosshatch");
+            setBuildField(packageName, "MODEL", "Pixel 3 XL");
+            setBuildField(packageName, "DEVICE", "crosshatch");
+        }
+
     }
 
     /**
