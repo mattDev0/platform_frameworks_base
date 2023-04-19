@@ -1296,18 +1296,6 @@ public class Instrumentation {
     private static void maybeSpoofBuild(Application app) {
         String packageName = app.getPackageName();
 
-        // Set device model for Genshin Impact internal testings
-        String hardwareName = SystemProperties.get("ro.boot.hardware");
-        if (hardwareName == "gourami" &&
-            "com.miHoYo.GenshinImpact".equals(packageName) ||
-            "com.miHoYo.Yuanshen".equals(packageName)) {
-            setBuildField(packageName, "MODEL", "Pixel 5 Pro");
-        }
-
-        // Set MODEL to "Pixel 4a (5G)"
-        if ("com.google.android.gms".equals(packageName)) {
-            setBuildField(packageName, "MODEL", "Pixel 4a (5G)");
-        }
     }
 
     /**
