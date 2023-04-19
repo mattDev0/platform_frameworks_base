@@ -1305,6 +1305,19 @@ public class Instrumentation {
             setBuildField(packageName, "DEVICE", "crosshatch");
         }
 
+        if ("com.google.android.apps.turbo".equals(packageName) ||
+         "com.google.android.googlequicksearchbox".equals(packageName) ||
+         "com.google.android.inputmethod.latin".equals(packageName) || 
+         "com.google.android.setupwizard".equals(packageName) ||
+         "com.google.android.apps.subscriptions.red".equals(packageName)) {
+            setBuildField(packageName, "FINGERPRINT", "google/cheetah/cheetah:13/TQ2A.230405.003.E1/9802792:user/release-keys");
+            setBuildField(packageName, "DEVICE", "cheetah");
+            setBuildField(packageName, "PRODUCT", "cheetah");
+            setBuildField(packageName, "MODEL", "Pixel 7 Pro");
+            setBuildField(packageName, "MANUFACTURER", "Google");
+            setBuildField(packageName, "BRAND", "google");
+        }
+
     }
 
     /**
