@@ -1310,7 +1310,7 @@ public class Instrumentation {
          "com.google.android.inputmethod.latin".equals(packageName) || 
          "com.google.android.setupwizard".equals(packageName) ||
          "com.google.android.apps.subscriptions.red".equals(packageName)) {
-            setBuildField(packageName, "FINGERPRINT", "google/cheetah/cheetah:13/TQ2A.230405.003.E1/9802792:user/release-keys");
+            setBuildField(packageName, "FINGERPRINT", "google/cheetah/cheetah:13/TQ2A.230505.002/9891397:user/release-keys");
             setBuildField(packageName, "DEVICE", "cheetah");
             setBuildField(packageName, "PRODUCT", "cheetah");
             setBuildField(packageName, "MODEL", "Pixel 7 Pro");
